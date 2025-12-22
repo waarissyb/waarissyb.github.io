@@ -10,16 +10,60 @@
 		<link rel="icon" type="image/png" sizes="192x192" href="/cooking-calculator/assets/192-CXO6lJkX.png">
 		<link rel="manifest" href="/cooking-calculator/assets/site-DnIZaaQO.webmanifest">
 		<meta name="theme-color" content="#ffffff">
-		<script type="module" crossorigin src="/cooking-calculator/assets/index-XqOvTOKe.js"></script>
+		<script type="module" crossorigin src="/cooking-calculator/assets/temperature-D0JseOXz.js"></script>
 		<link rel="modulepreload" crossorigin href="/cooking-calculator/assets/app-Ds-24hXq.js">
+		<link rel="modulepreload" crossorigin href="/cooking-calculator/assets/persist-form-Br1dGwet.js">
 		<link rel="stylesheet" crossorigin href="/cooking-calculator/assets/app-sKf1sG9J.css">
 	</head>
 	<body>
 		<main>
-			<h1>Hi</h1>
+			<section class="calc calc--temp" data-calc="temp">
+				<form class="calc__form" data-persist="calc:temp">
+					<fieldset class="calc__fieldset">
+						<legend class="calc__legend">Temperature</legend>
+		
+						<label class="calc__label" for="fahrenheit">
+							Fahrenheit
+						</label>
+		
+						<input
+							class="calc__range"
+							type="range"
+							id="fahrenheit"
+							name="fahrenheit"
+							min="122"
+							max="500"
+							value="212"
+							list="values"
+						/>
+		
+						<datalist id="values">
+							<option value="122" label="122"></option>
+							<option value="212" label="212"></option>
+							<option value="225" label="225"></option>
+							<option value="250" label="250"></option>
+							<option value="275" label="275"></option>
+							<option value="300" label="300"></option>
+							<option value="325" label="325"></option>
+							<option value="350" label="350"></option>
+							<option value="375" label="375"></option>
+							<option value="400" label="400"></option>
+							<option value="425" label="425"></option>
+							<option value="450" label="450"></option>
+							<option value="475" label="475"></option>
+							<option value="500" label="500"></option>
+						</datalist>
+					</fieldset>
+		
+					<output class="calc__output" id="adjustedTemperature" name="adjustedTemperature" for="fahrenheit">
+						212°F&nbsp;&nbsp;100°C
+					</output>
+				</form>
+			</section>
 		</main>
+
 		<nav class="tabbar" aria-label="Primary">
-			<a href="./index.html" aria-current="page">
+			<a href="./index.html">
 				<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
 					<path d="M240-200h120v-200q0-17 11.5-28.5T400-440h160q17 0 28.5 11.5T600-400v200h120v-360L480-740 240-560v360Zm-80 0v-360q0-19 8.5-36t23.5-28l240-180q21-16 48-16t48 16l240 180q15 11 23.5 28t8.5 36v360q0 33-23.5 56.5T720-120H560q-17 0-28.5-11.5T520-160v-200h-80v200q0 17-11.5 28.5T400-120H240q-33 0-56.5-23.5T160-200Zm320-270Z"/>
 					</svg>
@@ -31,7 +75,7 @@
 					</svg>
 				<span>Microwave</span>
 			</a>
-			<a href="./temperature.html">
+			<a href="./temperature.html" aria-current="page">
 				<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
 					<path d="M480-80q-83 0-141.5-58.5T280-280q0-48 21-89.5t59-70.5v-320q0-50 35-85t85-35q50 0 85 35t35 85v320q38 29 59 70.5t21 89.5q0 83-58.5 141.5T480-80Zm-40-440h80v-40h-40v-40h40v-80h-40v-40h40v-40q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760v240Z"/>
 				</svg>
