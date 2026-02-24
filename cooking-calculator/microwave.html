@@ -10,24 +10,67 @@
 		<link rel="icon" type="image/png" sizes="192x192" href="/cooking-calculator/assets/192-CXO6lJkX.png">
 		<link rel="manifest" href="/cooking-calculator/assets/site-DnIZaaQO.webmanifest">
 		<meta name="theme-color" content="#ffffff">
-		<script type="module" crossorigin src="/cooking-calculator/assets/microwave-nLrQyxDF.js"></script>
-		<link rel="modulepreload" crossorigin href="/cooking-calculator/assets/app-BT6FhbuC.js">
-		<link rel="modulepreload" crossorigin href="/cooking-calculator/assets/persist-form-Br1dGwet.js">
-		<link rel="stylesheet" crossorigin href="/cooking-calculator/assets/app-TOLRJz8I.css">
+		<script type="module" crossorigin src="/cooking-calculator/assets/microwave-BkOmD7Xu.js"></script>
+		<link rel="modulepreload" crossorigin href="/cooking-calculator/assets/app-Bl0R_A-f.js">
+		<link rel="modulepreload" crossorigin href="/cooking-calculator/assets/persist-form-DKayIese.js">
+		<link rel="stylesheet" crossorigin href="/cooking-calculator/assets/app-WIAD2Zwh.css">
 	</head>
 	<body>
 		<main>
 			<form data-calc="microwave">
 				<fieldset>
 					<legend>Recommended time</legend>
-					<label><input type="number" name="minutes" id="m" value="" min="0" max="59" step="1" list="suggestedMinutes" inputmode="numeric" maxlength="2" required oninput="this.value = this.value.slice(0, 2)">minutes</label>
+					<div class="number">
+						<div class="spinner">
+							<label for="m">Minutes</label>
+							<button
+								type="button"
+								class="value-control"
+								aria-controls="m"
+								aria-label="Decrease minutes"
+								data-spinbutton-operation="decrement"
+								tabindex="-1">&minus;</button>
+							
+							<input type="number" name="minutes" id="m" minutes="" min="0" max="59" step="1" list="suggestedMinutes" role="spinbutton" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="2" aria-valuemin="0" aria-valuemax="59" aria-valuenow="" required oninput="this.value = this.value.slice(0, 2)">
+							
+							<button
+								type="button"
+								class="value-control"
+								aria-controls="m"
+								aria-label="Increase minutes"
+								data-spinbutton-operation="increment"
+								tabindex="-1">&plus;</button>
+						</div>
+						
+						<div class="spinner">
+							<label for="s">Seconds</label>
+							<button
+								type="button"
+								class="value-control"
+								aria-controls="s"
+								aria-label="Decrease seconds"
+								data-spinbutton-operation="decrement"
+								tabindex="-1">&minus;</button>
+							
+							<input type="number" name="seconds" id="s" value="" min="0" max="59" step="1" list="suggestedSeconds" role="spinbutton" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="2" aria-valuemin="0" aria-valuemax="59" aria-valuenow="" required oninput="this.value = this.value.slice(0, 2)">
+							
+							<button
+								type="button"
+								class="value-control"
+								aria-controls="s"
+								aria-label="Increase seconds"
+								data-spinbutton-operation="increment"
+								tabindex="-1">&plus;</button>
+						</div>
+					</div>
+
 					<datalist id="suggestedMinutes">
 						<option value="1"></option>
 						<option value="3"></option>
 						<option value="5"></option>
 						<option value="7"></option>
 					</datalist>
-					<label><input type="number" name="seconds" id="s" value="" min="0" max="59" step="1" list="suggestedSeconds" inputmode="numeric" maxlength="2" required oninput="this.value = this.value.slice(0, 2)">seconds</label>
+
 					<datalist id="suggestedSeconds">
 						<option value="0"></option>
 						<option value="15"></option>
